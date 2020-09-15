@@ -4,6 +4,40 @@ var count = 1;
 var point = 0;
 var srcA, srcB, imageA, imageB, selectedA, selectedB, actualA, actualB;
 
+
+var gameDisp = document.getElementById('game_disp');
+console.log(gameDisp);
+// var levels = [];
+
+var buttonsLev = document.querySelector(".play_game");
+var levels = document.querySelectorAll(".play_game button");
+console.log(levels);
+console.log(levels[1]);
+
+[].forEach.call(levels, function(levels) {
+    
+    levels.addEventListener('click', function(){
+        buttonsLev.style.display = 'none';
+        console.log(levels);
+        var klasa = levels.getAttribute('class');
+        // gameDisp.style.display = 'block';
+        // levels.style.display = 'none';
+            console.log(klasa);
+
+        if(klasa === "easy"){
+            gameDisp.style.display = 'block';
+            buttonsLev;
+        }else if(klasa === "medium"){
+            console.log('ups');
+            buttonsLev;
+        }else if(klasa === "hard"){
+            console.log('ojoj');
+            buttonsLev;
+        }
+        
+    });
+});
+
 // add click to all boxes
 [].forEach.call(box, function(box) {
     box.addEventListener('click', function(e){
@@ -41,14 +75,14 @@ var srcA, srcB, imageA, imageB, selectedA, selectedB, actualA, actualB;
                         document.querySelector(".memory_game").appendChild(newDiv);
                     }
                 }
-                window.setTimeout(hideClassBox, 350, true)
+                window.setTimeout(hideClassBox, 650, true)
             }else{
                 function removeClassBox(){
                     actualA.removeAttribute("id");
                     actualB.removeAttribute("id")
                     count=1;
                 }
-                window.setTimeout(removeClassBox, 350, true)
+                window.setTimeout(removeClassBox, 650, true)
             }
         }
         count++;
