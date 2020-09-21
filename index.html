@@ -15,87 +15,98 @@
         <li><button class="hard">Hard</button></li>
     </ul>
     <div class="memory_game" id="game_disp">
+        <div class="timesUp">Time: <span id="seconds">0</span></div>
         <div id="game_box">
-            <div class="box box_4">
+            <button class="box box_4">
                 <div class="overlay_img">
                     <img src="./zoo/crocodile.png" width="60" height="60" alt="">
                 </div>
-            </div>
-            <div class="box box_16">
+            </button>
+            <button class="box box_16">
                 <div class="overlay_img">
                     <img src="./zoo/lion.png" width="60" height="60" alt="">
                 </div>
-            </div>
-            <div class="box box_3">
+            </button>
+            <button class="box box_3">
                 <div class="overlay_img">
                     <img src="./zoo/crocodile.png" width="60" height="60" alt="">
                 </div>
-            </div>
-            <div class="box box_5">
+            </button>
+            <button class="box box_5">
                 <div class="overlay_img">
                     <img src="./zoo/camel.png" width="60" height="60" alt="">
                 </div>
-            </div>
-            <div class="box box_1">
+            </button>
+            <button class="box box_1">
                 <div class="overlay_img">
                     <img src="./zoo/alpaca.png" width="60" height="60" alt="">
                 </div>
-            </div>
-            <div class="box box_6">
+            </button>
+            <button class="box box_6">
                 <div class="overlay_img">
                     <img src="./zoo/camel.png" width="60" height="60" alt="">
                 </div>
-            </div>
-            <div class="box box_7">
+            </button>
+            <button class="box box_7">
                 <div class="overlay_img">
                     <img src="./zoo/deer.png" width="60" height="60" alt="">
                 </div>
-            </div>
-            <div class="box box_8">
+            </button>
+            <button class="box box_8">
                 <div class="overlay_img">
                     <img src="./zoo/deer.png" width="60" height="60" alt="">
                 </div>
-            </div>
-            <div class="box box_10">
+            </button>
+            <button class="box box_10">
                 <div class="overlay_img">
                     <img src="./zoo/koala.png" width="60" height="60" alt="">
                 </div>
-            </div>
-            <div class="box box_9">
+            </button>
+            <button class="box box_9">
                 <div class="overlay_img">
                     <img src="./zoo/koala.png" width="60" height="60" alt="">
                 </div>
-            </div>
-            <div class="box box_2">
+            </button>
+            <button class="box box_2">
                 <div class="overlay_img">
                     <img src="./zoo/alpaca.png" width="60" height="60" alt="">
                 </div>
-            </div>
-            <div class="box box_12">
+            </button>
+            <button class="box box_12">
                 <div class="overlay_img">
                     <img src="./zoo/monkey.png" width="60" height="60" alt="">
                 </div>
-            </div>
-            <div class="box box_13">
+            </button>
+            <button class="box box_13">
                 <div class="overlay_img">
                     <img src="./zoo/sloth.png" width="60" height="60" alt="">
                 </div>
-            </div>
-            <div class="box box_14">
+            </button>
+            <button class="box box_14">
                 <div class="overlay_img">
                     <img src="./zoo/lion.png" width="60" height="60" alt="">
                 </div>
-            </div>
-            <div class="box box_15">
+            </button>
+            <button class="box box_15">
                 <div class="overlay_img">
                     <img src="./zoo/sloth.png" width="60" height="60" alt="">
                 </div>
-            </div>
-            <div class="box box_11">
+            </button>
+            <button class="box box_11">
                 <div class="overlay_img">
                     <img src="./zoo/monkey.png" width="60" height="60" alt="">
                 </div>
-            </div>
+            </button>
+        </div>
+        <div class="winner">
+            <div class='winner_box'>You win!</div>
+            <ul class="summary">Summary:
+                <li class="clicks"></li>
+                <li class="wrong"></li>
+                <li class="time"></li>
+                <li class="points"></li>
+            </ul>
+            <button id='reset'>Again?</button>
         </div>
     </div>
     <script src="script.js"></script>

@@ -36,6 +36,10 @@ body {
   background-color: #4A586E;
 }
 
+.play_game button:focus {
+  outline: none;
+}
+
 .memory_header {
   text-align: center;
   font-size: 40px;
@@ -52,6 +56,14 @@ body {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+}
+
+#game_box button {
+  border: 0;
+}
+
+#game_box button:focus {
+  outline: none;
 }
 
 #game_box .box {
@@ -83,6 +95,8 @@ body {
   align-items: center;
   background-color: #BE5D77;
   transition: background-color 0.3s;
+  outline: none;
+  border: none;
 }
 
 #game_box #show_image .overlay_img {
@@ -92,21 +106,47 @@ body {
 #game_box .good {
   background: transparent;
   box-shadow: none;
+  cursor: auto;
+}
+
+.timesUp {
+  display: none;
 }
 
 .winner {
+  display: none;
   position: relative;
 }
 
-.winner .winner_box {
+.winner .winner_box, .winner #reset, .winner .summary {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
   text-align: center;
+}
+
+.winner #reset {
+  top: -190px;
+  cursor: pointer;
+}
+
+.winner .winner_box {
   top: -250px;
   font-size: 43px;
   font-family: fantasy;
   color: teal;
+}
+
+.winner .summary {
+  top: -135px;
+  padding: 0;
+  list-style: none;
+  font-size: 20px;
+  color: crimson;
+}
+
+.winner .summary li {
+  font-size: 16px;
 }
