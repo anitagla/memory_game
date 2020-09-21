@@ -18,6 +18,99 @@ var levels = document.querySelectorAll(".play_game button");
 var seconds = document.getElementById("seconds");
 
 
+// random
+var srcFiles = [
+    'alpaca.png',
+    'camel.png',
+    'crocodile.png',
+    'deer.png',
+    'dolphin.png',
+    'egret.png',
+    'elephant.png',
+    'fox.png',
+    'giraffe.png',
+    'goat.png',
+    'gorilla.png',
+    'hippopotamus.png',
+    'kangaroo.png',
+    'koala.png',
+    'lion.png',
+    'meerkat.png',
+    'monkey.png',
+    'ostrich.png',
+    'owl.png',
+    'parrot.png',
+    'penguin.png',
+    'polar_bear.png',
+    'rabbit.png',
+    'raccoon.png',
+    'rhino.png',
+    'sea_lion.png',
+    'sloth.png',
+    'squirrel.png',
+    'zebra.png'
+];
+var srcElement = document.querySelectorAll(".box img");
+srcElement.ondragstart = function() { return false; };
+
+
+function shuffle(array) {
+    var i = array.length,
+        j = 0,
+        temp;
+    while (i--) {
+        j = Math.floor(Math.random() * (i+1));
+        // swap randomly chosen element with current element
+        temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    // return;
+}
+
+function generateNumbers(limit){
+    var nums = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],
+    ranNums = [],
+    j = 0;
+
+    while (limit--) {
+        j = Math.floor(Math.random() * (nums.length));
+        ranNums.push(nums[j]);
+        nums.splice(j,1);
+    }
+    return ranNums;
+}
+var generatedTable = generateNumbers(8);
+
+function duplicateTable(tab){
+    return tab.map(function(item) {
+        return [item, item];
+    }).reduce(function(a, b) { return a.concat(b) });
+}
+var duplicated = duplicateTable(generatedTable);
+shuffle(duplicated);
+// console.log(duplicated);
+
+var p=0;
+[].forEach.call(srcElement, function(srcElement) {
+// console.log(srcFiles.length);
+    // var randomNumber = Math.floor(Math.random()*srcFiles.length);
+    // console.log(randomNumber);
+    // console.log(randomNumber);
+    
+    var newNumb = duplicated[p];
+    // console.log(newNumb);
+    p++;
+    var newSrc = "./zoo/" + srcFiles[newNumb];
+    // console.log(newSrc);
+    srcElement.setAttribute('src', newSrc);
+    // console.log(newSrc);
+    
+        // console.log(srcFiles.length);
+    
+});
+// ---------
+
 [].forEach.call(levels, function(levels) {
     
     levels.addEventListener('click', function(){
@@ -52,7 +145,7 @@ var seconds = document.getElementById("seconds");
                         box.id = "show_image";
                         // take actual img
                         selectedA = box.className.substring(4);
-                        console.log(selectedA);
+                        // console.log(selectedA);
                         // url of img
                         imageA = document.querySelector('.'+selectedA+' .overlay_img img');
                         srcA = imageA.getAttribute('src').toString();
@@ -61,7 +154,7 @@ var seconds = document.getElementById("seconds");
                     else if (count === 2){
                         box.id += "show_image";
                         selectedB = box.className.substring(4);
-                        console.log(selectedB);
+                        // console.log(selectedB);
                         imageB = document.querySelector('.'+selectedB+' .overlay_img img');
                         srcB = imageB.getAttribute('src').toString();
                         actualB = box;
@@ -82,7 +175,8 @@ var seconds = document.getElementById("seconds");
                                     if(wrong === 0){
                                         points = 100;
                                     }else{
-                                        points = (clicks/wrong)*10;
+                                        points = (10-(wrong/clicks))*10;
+                                        points = Math.round(points)
                                     }
                                     // summary of game
                                     document.querySelector(".winner").style.display = "block";

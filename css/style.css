@@ -40,6 +40,16 @@ body {
   outline: none;
 }
 
+.play_game button:disabled {
+  background-color: gray;
+  color: #918c8c;
+}
+
+.play_game button:disabled:hover {
+  color: #918c8c;
+  background-color: gray;
+}
+
 .memory_header {
   text-align: center;
   font-size: 40px;
